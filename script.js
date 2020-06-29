@@ -40,21 +40,23 @@ function saveChanges(id,post_number) {
         let file = document.getElementById("choose-profile").files[0];
         let formdata=file;
         if(!file){
+            // console.log('no file');
+            file=document.querySelector(post_number+' .body img').src.split('/');
+            file='./'+file[4]+'/'+file[5];
+        }
+        else{
+            let form_data=new FormData();
+            form_data.append("file",formdata);
+            // console.log(form_data);
             let xhr=new XMLHttpRequest();
-        xhr.open('POST','upload_image.php?id='+id+'&heading='+heading+'&text='+text+'&image='+file,true);
+        xhr.open('POST','upload_image.php',true);
 
         xhr.onload=function(){
             if(this.status==200){
                 console.log(this.responseText);
             }
-
         }
-        xhr.send();
-            console.log('no file');
-            file=document.querySelector(post_number+' .body img').src.split('/');
-            file='./'+file[4]+'/'+file[5];
-        }
-        else{
+        xhr.send(form_data);
             file='./images/'+file.name;
             let post_img=document.querySelector(post_number+' .body img');
             post_img.src=file;
@@ -66,7 +68,6 @@ function saveChanges(id,post_number) {
             if(this.status==200){
                 console.log(this.responseText);
             }
-
         }
         xhr.send();
     })

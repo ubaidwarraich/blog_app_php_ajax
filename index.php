@@ -1,6 +1,5 @@
 <?php 
    require 'config.php';
-   $id=1;
    $sql="select *from posts";
    $result = $conn->query($sql);
 
@@ -22,7 +21,7 @@
         <?php  while($row = $result->fetch_assoc())
         
         echo '
-        <div class="post post-'.$row['id'].'">
+        <div class="post post-' . $row['id'] . '">
             <div class="heading"><h1>'.$row['heading'].'</h1></div>
             <div class="body">
                 <div class="text"><p>'.$row['text'].'
