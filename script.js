@@ -10,7 +10,6 @@ edit.forEach(btn => {
         let image=document.querySelector(post_number+' .body img').src.split('/');
         image='./'+image[4]+'/'+image[5];
         document.querySelector(post_number).innerHTML='';
-        // console.log(heading);
         document.querySelector(post_number).innerHTML=`
         <div class="heading">
            <input type="text" class="input-heading"value="${heading}" style="font-size:18px;">
@@ -40,14 +39,12 @@ function saveChanges(id,post_number) {
         let file = document.getElementById("choose-profile").files[0];
         let formdata=file;
         if(!file){
-            // console.log('no file');
             file=document.querySelector(post_number+' .body img').src.split('/');
             file='./'+file[4]+'/'+file[5];
         }
         else{
             let form_data=new FormData();
             form_data.append("file",formdata);
-            // console.log(form_data);
             let xhr=new XMLHttpRequest();
         xhr.open('POST','upload_image.php',true);
 

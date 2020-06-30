@@ -5,6 +5,9 @@ create_btn.addEventListener('click',()=>{
     let file = document.getElementById("choose-profile").files[0];
     let formdata=file;
     let image_path;
+    if(heading==''&&text==''){
+        return;
+    }
     if(!file){
         file='';
     }
@@ -32,5 +35,4 @@ create_btn.addEventListener('click',()=>{
         }
         xhr.send();
         window.location.replace("http://localhost/blog_app_php_ajax/index.php");
-        location.reload();
 });
