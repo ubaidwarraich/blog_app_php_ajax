@@ -31,4 +31,6 @@ create_btn.addEventListener('click',()=>{
             }
         }
         xhr.send();
+        window.location.replace("http://localhost/blog_app_php_ajax/index.php");
+        location.reload();
 });

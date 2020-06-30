@@ -12,7 +12,7 @@
                    <input type="file" id="choose-profile">
                 </div>
         </div>
-        <button type="submit" class="edit-btn edit-btn" id="create">Save</button>
+        <button type="submit" class="edit-btn edit-btn" name="edit" id="create">Save</button>
         </div>
     <script src="./create.js"></script>
 </body>

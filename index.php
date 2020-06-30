@@ -20,6 +20,7 @@
                 <div class="image"><img src="'.$row['image'].'" height="400" width="300" alt=""></div>
             </div>
             <button type="submit" class="edit-btn" name="edit-'.$row['id'].'">EDIT POST</button>
+            <button type="submit" class="edit-btn delete-btn" id="delete-btn" name="del-'.$row['id'].'">Delete POST</button>
         </div>
         ';
         

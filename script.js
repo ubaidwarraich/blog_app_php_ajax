@@ -81,8 +81,29 @@ function saveChanges(id,post_number) {
                 <button type="submit" class="edit-btn" name="edit-btn">EDIT POST</button>
             </div>
         `;
+        location.reload();
     })
 
 }
 
+
+// delete post ajax logic
+
+const del_btns=document.querySelectorAll('.delete-btn');
+
+del_btns.forEach(btn => {
+    btn.addEventListener('click',()=>{
+        let id_del=btn.getAttribute('name').split('-').pop();
+        let xhr=new XMLHttpRequest();
+        xhr.open('POST','delete.php?id='+id_del,true);
+        
+        xhr.onload=function(){
+            if(this.status==200){
+                console.log(this.responseText);
+            }
+        }
+        xhr.send();
+        location.reload();
+    })
+});
 
