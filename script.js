@@ -70,5 +70,19 @@ function saveChanges(id,post_number) {
             }
         }
         xhr.send();
+        document.querySelector(post_number).innerHTML=`
+        <div class="post post-${post_number}">
+                <div class="heading"><h1>${heading}</h1></div>
+                <div class="body">
+                    <div class="text"><p>${text}
+                    </p></div>
+                    <div class="image"><img src="${file}" height="400" width="300" alt=""></div>
+                </div>
+                <button type="submit" class="edit-btn" name="edit-btn">EDIT POST</button>
+            </div>
+        `;
     })
+
 }
+
+

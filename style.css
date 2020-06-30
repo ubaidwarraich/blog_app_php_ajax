@@ -63,3 +63,7 @@ p{
     margin:5px 8px;
     padding:10px 10px;
 }
+.edit-btn{
+    justify-self:center;
+    align-self: center;
+}
